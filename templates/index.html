@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Маркетплейс 🐶</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h1>Маркетплейс для тварин 🐶</h1>
+<a href="/cart">Кошик</a> | <a href="/login">Кабінет продавця</a>
+<div class="products">
+    {% for product in products %}
+    <div class="card">
+        <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.price }} грн</p>
+        <a href="/product/{{ product.id }}">Деталі</a> |
+        <a href="/add_to_cart/{{ product.id }}">Додати у кошик</a>
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>
+

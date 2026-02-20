@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Кабінет продавця</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h1>Кабінет продавця</h1>
+<a href="/add_product">Додати товар</a> | <a href="/logout">Вийти</a>
+<ul>
+    {% for product in products %}
+    <li>
+        <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}" style="width:50px; height:50px; object-fit:cover;">
+        {{ product.name }} — {{ product.price }} грн
+    </li>
+    {% endfor %}
+</ul>
+<a href="/">Головна</a>
+</body>
+</html>
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Додати товар</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h1>Додати товар</h1>
+<form method="post">
+    Назва: <input type="text" name="name" required><br>
+    Ціна: <input type="number" name="price" required><br>
+    Фото (назва файлу в static/images/): <input type="text" name="image" required><br>
+    <button type="submit">Додати</button>
+</form>
+<a href="/admin">Назад</a>
+</body>
+</html>
+

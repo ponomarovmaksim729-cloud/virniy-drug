@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Кошик</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h1>Кошик</h1>
+{% if cart %}
+<ul>
+    {% for item in cart %}
+    <li>
+        <img src="{{ url_for('static', filename='images/' + item.image) }}" alt="{{ item.name }}" style="width:50px; height:50px; object-fit:cover;">
+        {{ item.name }} — {{ item.price }} грн
+    </li>
+    {% endfor %}
+</ul>
+<p><b>Всього:</b> {{ total }} грн</p>
+{% else %}
+<p>Кошик порожній 😢</p>
+{% endif %}
+<a href="/">Головна</a>
+</body>
+</html>
+
+
+
